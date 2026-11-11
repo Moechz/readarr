@@ -73,7 +73,7 @@
   "github_repo": "readarr",
   "upstream_version": "0.3.10",
   "release_tag_prefix": "v",
-  "version": "0.3.10-1",
+  "version": "0.3.10-2",
   "help": "https://github.com/Moechz/readarr/issues",
   "official": "https://github.com/Readarr/Readarr",
   "license": "GPL-3.0",
