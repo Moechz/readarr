@@ -16,7 +16,11 @@
 #           cap_add, explicit TZ, a healthcheck on the only service, and
 #           x-app-meta as the last block.
 # Wrapper : the upstream image runs as root; the entrypoint below replaces
-#           it so the service can run as an unprivileged user.
+#           it so the service runs as uid 1000 with umask 077 (the API key in
+#           config.xml is created 0600).
+# Volumes : /config (settings + database), /books (library root folder) and
+#           /downloads (point your download client's completed folder here so
+#           Readarr can import with hardlinks/atomic moves).
 # Escaping: docker compose interpolates ${VAR}/$VAR in compose files, so any
 #           '$' meant for the shell is written '$$'.
 #
@@ -42,6 +46,8 @@ services:
       TZ: "Asia/Shanghai"
     volumes:
       - /Volume1/DockerAppData/readarrdocker/config:/config
+      - /Volume1/DockerAppData/readarrdocker/books:/books
+      - /Volume1/DockerAppData/readarrdocker/downloads:/downloads
     healthcheck:
       test: ["CMD-SHELL", "curl -fsS http://127.0.0.1:8787/ping >/dev/null || exit 1"]
       interval: 30s

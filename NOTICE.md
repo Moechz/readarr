@@ -7,13 +7,16 @@ the upstream **Readarr** project.
 
 - Project: https://github.com/Readarr/Readarr
 - Licence: **GPL-3.0**
+- **Status: the project was archived upstream on 2025-06-27.** No further releases are made.
 - Relationship: the upstream application is used **unmodified**, inside the container
   image. No upstream source code is redistributed in this package.
 
 ## 2. Container image — linuxserver/readarr:0.3.10-develop
 
 - Registry: Docker Hub (`linuxserver/readarr:0.3.10-develop`)
-- Maintainer: LinuxServer.io
+- Maintainer: LinuxServer.io (the image repository was archived on 2025-06-27)
+- Last published build: 2023-12-07, digest
+  `sha256:c39c1fe2e48e9353a2d81294d70b7624975ae8d603c3cae8df77583d3efeca5b`, Alpine 3.18 base
 - The image is pulled from Docker Hub at install time and is not redistributed here.
 
 ## 3. Components inside the image
